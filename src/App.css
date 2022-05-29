@@ -1,38 +1,81 @@
 .App {
-  text-align: center;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.block {
+    width: 150px;
+    height: 150px;
+    border: 5px solid rgb(45, 0, 225);
+    background-size: cover;
+    display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mark1 {
+    background-image: url('images/zero.JPG');
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mark2 {
+    background-image: url('images/crossnew.JPG');
 }
 
-.App-link {
-  color: #61dafb;
+h6 {
+    text-align: center;
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gameover {
+    position: absolute;
+    /* left: 50%; */
+    /* top: 50%; */
+    animation: 0.5s ease anim forwards;
+    /* animation-delay: 0.5s; */
+    transform: scale( 0);
+}
+
+.rgameover {
+    position: absolute;
+    /* left: 50%; */
+    /* top: 50%; */
+    animation: 0.5s ease anim reverse;
+    /* animation-delay: 0.5s; */
+    transform: scale( 0);
+}
+
+.rgameoverremove {
+    animation: 0.5s ease animremove reverse;
+}
+
+.gameoverremove {
+    /* border: 2px solid black; */
+    animation: 0.5s ease animremove forwards;
+}
+
+@keyframes animremove {
+    0% {
+        transform: scale( 1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale( 5);
+        opacity: 0;
+    }
+}
+
+@keyframes anim {
+    0% {
+        transform: scale( 0);
+    }
+    100% {
+        transform: scale( 3);
+    }
+}
+
+.hidden {
+    transform: scale(0);
 }
